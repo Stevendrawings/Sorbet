@@ -1,10 +1,16 @@
 var texte = document.querySelector('p');  
 var noticeAlert = document.querySelector('.notice'); 
-var parentTag = document.querySelector('.inputBackground'); 
+var parentTag = document.querySelector('.inputBackground') 
+var parentFocus = document.querySelector('.input-background')
 var btnHundle = document.querySelector('#hundleClick');
 var inputHideTags = document.querySelector('#inputTags');
 var tabsTxt = texte.innerHTML.toLowerCase().split(' ');
 var tableau = Array(tabsTxt.length)
+
+function eventListetterFocus(){
+    parentFocus.style.borderColor = "#e84118";
+    parentFocus.style.boxShadow = "rgba(255, 0, 0, 0.353)";
+}
 
 function hundlehideTexte(){
     var valeur = inputHideTags.value   
@@ -21,6 +27,9 @@ function hundlehideTexte(){
             tableau.splice(index, 1, tabsTxt.at(index))
             console.log(tableau)
         } if(tabsTxt.at(index) != valeur){
+            parentFocus.style.border = "2px solid red";
+            parentFocus.style.boxShadow = "0 0 0 0.2rem rgb(255 0 0 / 25%)";
+            parentFocus.style.backgroundColor = "#ffebeb";
             console.log(tableau.splice(0, 0))
             return false
         }
@@ -37,3 +46,4 @@ function createTags(paramText){
 function retrieve(arr, val){ return arr.indexOf(val) }
 
 btnHundle.addEventListener('click', hundlehideTexte)
+inputHideTags.addEventListener('click', eventListetterFocus)

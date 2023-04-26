@@ -8,17 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    <header><h1>Sorbet</h1></header>
+    <main class="content">
         <section>
             <div class="wrapper-sorbet">
+                <h1>Sorbet</h1>
+                <div class="form-generator-sorbet">
+                    <textarea id="story" name="story" placeholder="Taper votre texte ici..."></textarea>
+                    <button>Génerer le texte</button>
+                </div>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
                 <div class="inputBackground">
-                    <div class="input-background"><input type="text" id="inputTags" placeholder="Taper votre mot ici..."></div>
+                    <div class="input-background"><input type="text" id="inputTags" placeholder="Taper le texte à cacher ici..."></div>
                     <div clas="notice"></div>
                     <button id="hundleClick">Cacher</button>
                 </div>
             </div>
         </section>
+    </main>
     <script src="js/app.js"></script>
 </body>
 </html>
