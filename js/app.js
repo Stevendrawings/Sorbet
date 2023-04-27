@@ -16,19 +16,19 @@ function hundlehideTexte(){
             noticeAlert.style.color = "rgb(97 243 74)";
             parentFocus.style.border = "2px solid rgb(97 243 74)";
             parentFocus.style.boxShadow = "rgb(67 255 98 / 25%) 0px 0px 0px 0.2rem";
-            if(tableau.indexOf(valeur) === -1){
-                console.log('Le nouveau tableau est : ' 
-                + createTags(valeur));
-            } if(tableau.indexOf(valeur) > -1){
-                noticeAlert.textContent = "Vous avez deja entré le mot '" 
-                + valeur + "' dans le tableau !";
+        if(tableau.indexOf(valeur) === -1){
+            console.log(tabsTxt.at(index))
+            console.log('Le nouveau tableau est : ' + createTags(valeur));
+        } if(tableau.indexOf(valeur) > -1){
+            noticeAlert.textContent = "Vous avez deja entré le mot '" 
+            + valeur + "' dans le tableau !";
                 noticeAlert.style.color = "#00cbff";
                 parentFocus.style.border = "2px solid #00cbff";
                 parentFocus.style.boxShadow = "rgb(0 196 255 / 25%) 0px 0px 0px 0.2rem";
                 console.log(valeur 
-                + ' existe déjà dans le tableau.');
+            + ' existe déjà dans le tableau.');
                 return false
-            }
+        }
             tableau.splice(index, 1, tabsTxt.at(index))
             console.log(tableau)
         } if(tabsTxt.at(index) != valeur){
@@ -45,8 +45,9 @@ function createTags(paramText){
     var newDiv = document.createElement("span");
     var newContent = document.createTextNode(paramText);
         newDiv.appendChild(newContent);
-        parentTag.appendChild(newDiv)
+        parentFocus.appendChild(newDiv)
         newDiv.className = "sorbetTags";
+        parentFocus.insertAdjacentElement('afterbegin', newDiv);
         return paramText;
     }
 
