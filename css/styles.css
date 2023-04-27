@@ -59,8 +59,7 @@ input{
 
 ::placeholder { 
 	font-weight:500; 
-	color: #f0d400;
-}
+	color: #f0d400 }
 
 h1 {
 	font-size: 35px;
@@ -124,18 +123,20 @@ textarea:focus {
     align-items: center }
 
 .input-background {   
-	margin-top: 10px;
+    margin-top: 10px;
     border: 2px solid #fbea5b;
     background: #fffdeb;
     border-radius: 4px;
-    padding: 12px 20px }
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap; }
 
 p { margin-bottom: 20px;
     line-height: 1.28 }
 
 .sorbetTags {
     background: #fffad2;
-    margin: 0 2px;
+    margin: 3px;
     padding: 5px 20px;
     border-radius: 5px;
     color: #f0d418;
