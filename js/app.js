@@ -1,13 +1,30 @@
-var texte = document.querySelector('p');  
 var noticeAlert = document.querySelector('.notice'); 
-var parentTag = document.querySelector('.inputBackground') 
-var parentFocus = document.querySelector('.input-background')
+var textateaGenerate = document.querySelector('#story'); 
+var parentFocus = document.querySelector('.input-background')  
 var btnHundle = document.querySelector('#hundleClick');
+var btnGenerate = document.querySelector('#generateTxt');
 var inputHideTags = document.querySelector('#inputTags');
-var tabsTxt = texte.innerHTML.toLowerCase().split(' ');
-var tableau = Array(tabsTxt.length)
+
+function createP(){
+    var parentP = document.querySelector('.wrapper-sorbet p')
+    var texteVal = textateaGenerate.value
+    var newContentP = document.createTextNode(texteVal);
+        parentP.innerText = newContentP.textContent
+        text = document.querySelector('p'); 
+        texte = text.innerText
+        text.style.color = "#000";
+        tabsTxt = texte.split(' ')
+        tableau = Array(tabsTxt.length);
+    }
+
+function etoFilter(arr){
+    arr.filter(function(element){
+        return element.indexOf(valeur) != 1;
+    })  
+}
 
 function hundlehideTexte(){
+    console.log(etoFilter(tableau))
     var valeur = inputHideTags.value   
     var index = retrieve(tabsTxt, valeur);
         if(tabsTxt.at(index) == valeur){
@@ -17,7 +34,6 @@ function hundlehideTexte(){
             parentFocus.style.border = "2px solid rgb(97 243 74)";
             parentFocus.style.boxShadow = "rgb(67 255 98 / 25%) 0px 0px 0px 0.2rem";
         if(tableau.indexOf(valeur) === -1){
-            console.log(tabsTxt.at(index))
             console.log('Le nouveau tableau est : ' + createTags(valeur));
         } if(tableau.indexOf(valeur) > -1){
             noticeAlert.textContent = "Vous avez deja entré le mot '" 
@@ -54,3 +70,4 @@ function createTags(paramText){
 function retrieve(arr, val){ return arr.indexOf(val) }
 
 btnHundle.addEventListener('click', hundlehideTexte)
+btnGenerate.addEventListener('click', createP)
