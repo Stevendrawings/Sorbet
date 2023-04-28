@@ -92,18 +92,21 @@ button {
     padding: 0px 20px;
     margin: 8px 0 }
 
-.form-generator-sorbet { margin: 10px 0 }
+.form-generator-sorbet {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+    display: inline-table; }
 
 button:active { transform: translateY(1px) }
 
 textarea {
-    width: 100%;
-    max-width: 460px;
+    width: -webkit-fill-available;
     border: 2px solid #fbea5b;
     background: #fffdeb;
     height: 100px;
     padding: 12px 20px;
-    border-radius: 5px }
+    border-radius: 5px; }
 
 .notice {
     font-size: 10px;
@@ -131,8 +134,11 @@ textarea:focus {
     display: flex;
     flex-wrap: wrap; }
 
-p { margin-bottom: 20px;
+p { color:rgb(200, 200, 200);
+    margin-bottom: 20px;
     line-height: 1.28 }
+
+/* .wrapper-sorbet p { color: #d0d0d0; } */
 
 .sorbetTags {
     background: #fffad2;
