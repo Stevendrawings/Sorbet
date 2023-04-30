@@ -31,8 +31,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
-	background-color: #fff6b5;
+    line-height: 1;
+    background-color: #ffffff;
     font-family: 'Almarai', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
@@ -70,19 +70,19 @@ h1 {
 .wrapper-sorbet {     
     padding: 40px;
     width: 100%;
-    max-width: 500px;
-    background-color: #fff;
+    max-width: 400px;
+    background-color: #fff7bb;
     border-radius: 15px; }
 
 button {
-    background-color: #fff;
-    border: 1px solid #dcdcdc;
-    box-shadow: 0 1px 1px #0000000a;
+    background-color: #fffad2;
+    border: 1px solid #ceb615;
+    box-shadow: 0 1px 1px #f0d400;
     border-radius: 4px;
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    color: #767676;
+    color: #ceb615;
     transition: all .1s ease-in-out;
     -webkit-user-select: none;
     user-select: none;
@@ -90,7 +90,7 @@ button {
     font-size: 13px;
     line-height: 30px;
     padding: 0px 20px;
-    margin: 8px 0 }
+    margin: 8px 0; }
 
 .form-generator-sorbet {
     width: 100%;
@@ -134,7 +134,7 @@ textarea:focus {
     display: flex;
     flex-wrap: wrap; }
 
-p { color:rgb(200, 200, 200);
+p { color:#f0d400;
     margin-bottom: 20px;
     line-height: 1.28 }
 
