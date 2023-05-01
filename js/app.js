@@ -4,12 +4,12 @@ var parentFocus = document.querySelector('.input-background')
 var btnHundle = document.querySelector('#hundleClick');
 var btnGenerate = document.querySelector('#generateTxt');
 var inputHideTags = document.querySelector('#inputTags');
-var parentP = document.querySelector('.wrapper-sorbet p')
+var parentP = document.querySelector('.wrapper-sorbet p') 
 var text = document.querySelector('p')
 
 function createP(){  
-    parentP.innerHTML = '<div>' + textateaGenerate.value + '</div>'
-    var selectDATAtext = document.querySelector('.wrapper-sorbet p div')
+        parentP.innerHTML = '<div>' + textateaGenerate.value + '</div>'
+        var selectDATAtext = document.querySelector('.wrapper-sorbet p div')
         text.style.color = "#ceb40c"
         tabsTxt = parentP.innerText.split(' ')
         tableau = Array(tabsTxt.length)
@@ -19,12 +19,11 @@ function createP(){
             listSpan = parentP.appendChild(span)
             listSpan.className = "spanTags"
             listSpan.innerHTML = " " + tabsTxt[i] + " ";
-
         }
     }
 
 function hundlehideTexte(){
-    var valeur = inputHideTags.value   
+    var valeur = inputHideTags.value;
     var index = retrieve(tabsTxt, valeur);
         if(tabsTxt.at(index) == valeur){
             noticeAlert.textContent = "Vous avez entré le mot '" 
@@ -35,8 +34,13 @@ function hundlehideTexte(){
         if(tableau.indexOf(valeur) === -1){
             var spans = document.querySelectorAll('.spanTags')
                 for(var j = 0; j < spans.length; j = j + 1){ 
-                    console.log(spans[index].style.color = 'red')}
+                    spans[index].style.textDecorationColor = '#fbea5b';
+                    spans[index].style.textDecorationThickness = '1rem';
+                    spans[index].style.textDecorationLine = 'line-through'           
+            function foo(){ spans[index].style.textDecorationColor = 'red' } }
             console.log('Le nouveau tableau est : ' + createTags(valeur));
+            var boutton = document.querySelector('.circleCroix')
+                boutton.addEventListener('click', foo)
         } if(tableau.indexOf(valeur) > -1){
             noticeAlert.textContent = "Vous avez deja entré le mot '" 
             + valeur + "' dans le tableau !";
@@ -53,17 +57,20 @@ function hundlehideTexte(){
             parentFocus.style.boxShadow = "0 0 0 0.2rem rgb(255 0 0 / 25%)";
             console.log(tableau.splice(0, 0))
             return false
-       }
+        }
     }
 
 function createTags(paramText){
+    var divs = document.createElement("div");
+        divs.className = "circleCroix";
     var newDiv = document.createElement("span");
     var newContent = document.createTextNode(paramText);
         newDiv.appendChild(newContent);
         parentFocus.appendChild(newDiv)
+        newDiv.appendChild(divs)
         newDiv.className = "sorbetTags";
         parentFocus.insertAdjacentElement('afterbegin', newDiv);
-        return paramText;
+        return paramText
     }
 
 function retrieve(arr, val){ 

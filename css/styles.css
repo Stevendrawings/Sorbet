@@ -3,6 +3,7 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
+   creation Rahul Kaklotar : img croix
 */
 
 html, body, div, span, applet, object, iframe,
@@ -143,8 +144,21 @@ p { color:#f0d400;
 .sorbetTags {
     background: #fffad2;
     margin: 3px;
-    padding: 5px 20px;
+    padding: 5px 12px;
     border-radius: 5px;
     color: #f0d418;
     border: 1px solid #f0d400;
-    font-size: 14px }
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    width: auto }
+
+.circleCroix{
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: #f0d4007a;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    left: 5px }
