@@ -37,10 +37,13 @@ function hundlehideTexte(){
                     spans[index].style.textDecorationColor = '#fbea5b';
                     spans[index].style.textDecorationThickness = '1rem';
                     spans[index].style.textDecorationLine = 'line-through'           
-            function foo(){ spans[index].style.textDecorationColor = 'red' } }
+            function hundleRemove(){
+                divs = document.querySelector('.sorbetTags')
+                console.log(divs.remove(divs))
+                spans[index].style.textDecorationLine = 'none' } }
             console.log('Le nouveau tableau est : ' + createTags(valeur));
             var boutton = document.querySelector('.circleCroix')
-                boutton.addEventListener('click', foo)
+                boutton.addEventListener('click', hundleRemove)
         } if(tableau.indexOf(valeur) > -1){
             noticeAlert.textContent = "Vous avez deja entré le mot '" 
             + valeur + "' dans le tableau !";
@@ -61,7 +64,7 @@ function hundlehideTexte(){
     }
 
 function createTags(paramText){
-    var divs = document.createElement("div");
+        divs = document.createElement("div");
         divs.className = "circleCroix";
     var newDiv = document.createElement("span");
     var newContent = document.createTextNode(paramText);
@@ -73,9 +76,7 @@ function createTags(paramText){
         return paramText
     }
 
-function retrieve(arr, val){ 
-    return arr.indexOf(val) 
-}
+function retrieve(arr, val){  return arr.indexOf(val) }
 
 btnHundle.addEventListener('click', hundlehideTexte)
 btnGenerate.addEventListener('click', createP)

@@ -157,8 +157,10 @@ p { color:#f0d400;
     display: block;
     width: 17px;
     height: 17px;
-    background: #f0d4007a;
+    background: #f0d40038;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
-    left: 5px }
+    background-position: center;
+    background-image: url(../img/croix.svg);
+    left: 5px; }
